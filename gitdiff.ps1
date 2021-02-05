@@ -5,5 +5,9 @@ $count=$temp.Length
 echo "Total changed $count files"
 For ($i=0; $i -lt $temp.Length; $i++){
     $name=$temp[$i]
-    echo "this is $name file"
+    if ($name -like '*yml'){
+        if($name -notlike 'azure-pipeline.yml'){
+            Write-Host '##vso[task.setvariable variable=yamlFileName;]'$name
+        }
+    }
 }
