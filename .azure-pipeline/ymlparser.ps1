@@ -1,7 +1,7 @@
 Install-Module -Name FXPSYaml -Scope CurrentUser -Force
 Import-Module FXPSYaml
 $yamlFileName=$args[0]
-[string[]]$fileContent = Get-Content "$PSScriptRoot/$yamlFileName"
+[string[]]$fileContent = Get-Content "$PSScriptRoot\$yamlFileName"
 $content = ''
 foreach ($line in $fileContent) { $content = $content + "`n" + $line }
 $yaml = ConvertFrom-YAML $content
