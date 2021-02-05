@@ -1,6 +1,7 @@
 Install-Module -Name FXPSYaml -Scope CurrentUser -Force
 Import-Module FXPSYaml
 $yamlFileName=$args[0]
+echo "this is the path of the yaml $yamlFileName"
 [string[]]$fileContent = Get-Content "$yamlFileName"
 $content = ''
 foreach ($line in $fileContent) { $content = $content + "`n" + $line }
