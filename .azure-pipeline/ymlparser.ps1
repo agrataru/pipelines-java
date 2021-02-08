@@ -1,5 +1,6 @@
 $yamlFileName=$args[0]
-echo "this is the path of the yaml $yamlFileName and this is $PSScriptRoot"
+$yamlFileName1=$args[1]
+echo "this is the path of the yaml $yamlFileName and $yamlFileName1 this is $PSScriptRoot"
 Install-Module -Name FXPSYaml -Scope CurrentUser -Force
 Import-Module FXPSYaml
 [string[]]$fileContent = Get-Content "$System.DefaultWorkingDirectory/$yamlFileName"
