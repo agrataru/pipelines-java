@@ -25,7 +25,7 @@
                         .Build();
                     var p = deserializer.Deserialize<Person>(yml);
                     Console.WriteLine("Hello World!");
-                    Console.WriteLine(p.name);
+                    Console.WriteLine("##vso[task.setvariable variable=name;]" + p.name);
                     System.Environment.SetEnvironmentVariable("name", p.name, EnvironmentVariableTarget.User);
                 }
             }
